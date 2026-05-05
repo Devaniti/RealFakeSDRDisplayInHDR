@@ -582,6 +582,7 @@ void LoadImageFromFile(WPARAM wParam)
     ImageData.resize(ImageWidth * ImageHeight * 4);
     memcpy(ImageData.data(), image, ImageData.size());
     stbi_image_free(image);
+    UpdateWindowSize();
 
     CreateResolutionDependantResources();
 }
