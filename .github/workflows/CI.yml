@@ -1,0 +1,37 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-2022
+    steps:
+    - name: Sync
+      uses: actions/checkout@v4
+      with:
+        submodules: 'recursive'
+        
+    - name: Configure
+      shell: pwsh
+      run: ./scripts/configure.ps1
+      
+    - name: Build Debug
+      shell: pwsh
+      run: ./scripts/build.ps1 Debug
+      
+    - name: Build Release
+      shell: pwsh
+      run: ./scripts/build.ps1 Release
+      
+    - name: Archive Debug artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: RealFakeSDRDisplayInHDR - Debug
+        path: ./build/Debug/RealFakeSDRDisplayInHDR.exe
+      
+    - name: Archive Release artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: RealFakeSDRDisplayInHDR - Release
+        path: ./build/Release/RealFakeSDRDisplayInHDR.exe
