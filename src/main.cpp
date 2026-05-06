@@ -538,14 +538,14 @@ void LoadImageFromFile(WPARAM wParam)
 
     if (count < 1)
     {
-        MessageBoxW(0, L"You somehow dragged less than 1 file", L"Error", MB_OK | MB_ICONERROR);
+        MessageBoxW(0, L"You somehow dropped less than 1 file", L"Error", MB_OK | MB_ICONERROR);
         DragFinish(hDrop);
         return;
     }
 
     if (count > 1)
     {
-        MessageBoxW(0, L"You can only drag 1 file at a time", L"Error", MB_OK | MB_ICONERROR);
+        MessageBoxW(0, L"You can only drop 1 file at a time", L"Error", MB_OK | MB_ICONERROR);
         DragFinish(hDrop);
         return;
     }
@@ -571,8 +571,7 @@ void LoadImageFromFile(WPARAM wParam)
     stbi_uc* image = stbi_load(filePath.c_str(), &width, &height, nullptr, 4);
     if (image == nullptr)
     {
-        MessageBoxW(0, L"Failed to load default image", L"Error", MB_OK | MB_ICONERROR);
-        ExitProcess(1);
+        MessageBoxW(0, L"Failed to load image. Please make sure you are dropping an image file.", L"Error", MB_OK | MB_ICONERROR);
         return;
     }
 
@@ -670,7 +669,7 @@ void LoadImageFromMemory(MemoryBlock imageBytes)
                                            imageBytes.size, &width, &height, nullptr, 4);
     if (image == nullptr)
     {
-        MessageBoxW(0, L"Failed to load default image", L"Error", MB_OK | MB_ICONERROR);
+        MessageBoxW(0, L"Failed to load built-in image", L"Error", MB_OK | MB_ICONERROR);
         ExitProcess(1);
         return;
     }
