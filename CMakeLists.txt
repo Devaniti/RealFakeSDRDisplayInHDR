@@ -50,6 +50,7 @@ add_custom_command(
                 ${CMAKE_CURRENT_BINARY_DIR}/generated/image_3.h
                 ${CMAKE_CURRENT_BINARY_DIR}/generated/image_4.h
                 ${CMAKE_CURRENT_BINARY_DIR}/generated/image_5.h
+                ${CMAKE_CURRENT_BINARY_DIR}/generated/image_6.h
         COMMAND ${CMAKE_COMMAND} -DINPUT_FILE="${CMAKE_CURRENT_SOURCE_DIR}/resources/open_source_licenses.txt" -DOUTPUT_FILE="${CMAKE_CURRENT_BINARY_DIR}/generated/open_source_licenses.h" -DVARIABLE_NAME=open_source_licenses_data -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/embed_file.cmake"
         COMMAND ${CMAKE_COMMAND} -DINPUT_FILE="${CMAKE_CURRENT_SOURCE_DIR}/resources/0.png" -DOUTPUT_FILE="${CMAKE_CURRENT_BINARY_DIR}/generated/image_0.h" -DVARIABLE_NAME=image_0 -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/embed_file.cmake"
         COMMAND ${CMAKE_COMMAND} -DINPUT_FILE="${CMAKE_CURRENT_SOURCE_DIR}/resources/1.png" -DOUTPUT_FILE="${CMAKE_CURRENT_BINARY_DIR}/generated/image_1.h" -DVARIABLE_NAME=image_1 -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/embed_file.cmake"
@@ -57,15 +58,17 @@ add_custom_command(
         COMMAND ${CMAKE_COMMAND} -DINPUT_FILE="${CMAKE_CURRENT_SOURCE_DIR}/resources/3.png" -DOUTPUT_FILE="${CMAKE_CURRENT_BINARY_DIR}/generated/image_3.h" -DVARIABLE_NAME=image_3 -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/embed_file.cmake"
         COMMAND ${CMAKE_COMMAND} -DINPUT_FILE="${CMAKE_CURRENT_SOURCE_DIR}/resources/4.png" -DOUTPUT_FILE="${CMAKE_CURRENT_BINARY_DIR}/generated/image_4.h" -DVARIABLE_NAME=image_4 -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/embed_file.cmake"
         COMMAND ${CMAKE_COMMAND} -DINPUT_FILE="${CMAKE_CURRENT_SOURCE_DIR}/resources/5.png" -DOUTPUT_FILE="${CMAKE_CURRENT_BINARY_DIR}/generated/image_5.h" -DVARIABLE_NAME=image_5 -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/embed_file.cmake"
+        COMMAND ${CMAKE_COMMAND} -DINPUT_FILE="${CMAKE_CURRENT_SOURCE_DIR}/resources/6.png" -DOUTPUT_FILE="${CMAKE_CURRENT_BINARY_DIR}/generated/image_6.h" -DVARIABLE_NAME=image_6 -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/embed_file.cmake"
         DEPENDS 
-                cmake/embed_file.cmake
-                resources/open_source_licenses.txt
-                resources/0.png
-                resources/1.png
-                resources/2.png
-                resources/3.png
-                resources/4.png
-                resources/5.png
+                ${CMAKE_CURRENT_SOURCE_DIR}/cmake/embed_file.cmake
+                ${CMAKE_CURRENT_SOURCE_DIR}/resources/open_source_licenses.txt
+                ${CMAKE_CURRENT_SOURCE_DIR}/resources/0.png
+                ${CMAKE_CURRENT_SOURCE_DIR}/resources/1.png
+                ${CMAKE_CURRENT_SOURCE_DIR}/resources/2.png
+                ${CMAKE_CURRENT_SOURCE_DIR}/resources/3.png
+                ${CMAKE_CURRENT_SOURCE_DIR}/resources/4.png
+                ${CMAKE_CURRENT_SOURCE_DIR}/resources/5.png
+                ${CMAKE_CURRENT_SOURCE_DIR}/resources/6.png
 )
 
 add_executable(RealFakeSDRDisplayInHDR)
@@ -110,6 +113,7 @@ target_sources(RealFakeSDRDisplayInHDR
         ${CMAKE_CURRENT_BINARY_DIR}/generated/image_3.h
         ${CMAKE_CURRENT_BINARY_DIR}/generated/image_4.h
         ${CMAKE_CURRENT_BINARY_DIR}/generated/image_5.h
+        ${CMAKE_CURRENT_BINARY_DIR}/generated/image_6.h
 
         # ImGUI sources
         PRIVATE

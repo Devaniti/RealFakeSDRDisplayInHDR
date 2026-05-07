@@ -355,7 +355,7 @@ void RenderImGui()
         PostMessage(WindowHWND, WM_LOAD_BUNDLED_IMAGE, 0, 0);
     }
 
-    for (int i = 1; i <= 5; ++i)
+    for (int i = 1; i <= 6; ++i)
     {
         ImGui::SameLine();
         std::string indexStr = std::to_string(i);

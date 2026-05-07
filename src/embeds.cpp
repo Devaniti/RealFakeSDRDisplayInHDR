@@ -8,6 +8,7 @@
 #include "image_3.h"
 #include "image_4.h"
 #include "image_5.h"
+#include "image_6.h"
 #include "open_source_licenses.h"
 #include "tonemap_ps.dxbc.h"
 #include "tonemap_vs.dxbc.h"
@@ -61,6 +62,11 @@ MemoryBlock GetImage(int index)
         return {
             .data = image_5,
             .size = sizeof(image_5),
+        };
+    case 6:
+        return {
+            .data = image_6,
+            .size = sizeof(image_6),
         };
     default:
         assert(0);
