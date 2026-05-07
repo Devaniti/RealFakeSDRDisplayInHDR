@@ -85,7 +85,7 @@ float SelectedPowerFunctionCharacteristic = 2.2f;
 
 bool SelectedCustomColorGamut = false;
 // Only used when SelectedAdvancedColorSettings = false
-float SelectedVividness = 0.52f;
+float SelectedVividness = 0.00f;
 // Only used when SelectedAdvancedColorSettings = true
 // Defaults - Exact primary colors of authors display (as measured)
 PrimaryColors SelectedPrimaryColors = {
