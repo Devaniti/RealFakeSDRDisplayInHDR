@@ -107,6 +107,7 @@ target_sources(RealFakeSDRDisplayInHDR
         FILES
         ${CMAKE_CURRENT_BINARY_DIR}/generated/tonemap_vs.dxbc.h
         ${CMAKE_CURRENT_BINARY_DIR}/generated/tonemap_ps.dxbc.h
+        ${CMAKE_CURRENT_BINARY_DIR}/generated/open_source_licenses.h
         ${CMAKE_CURRENT_BINARY_DIR}/generated/image_0.h
         ${CMAKE_CURRENT_BINARY_DIR}/generated/image_1.h
         ${CMAKE_CURRENT_BINARY_DIR}/generated/image_2.h
